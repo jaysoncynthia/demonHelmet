@@ -2104,6 +2104,11 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 			s << '.';
 		}
 	}
+	
+	if (it.classification > 0) {
+		//TODO: tiers
+		s << std::endl << "Classification: " << static_cast<uint16_t>(it.classification) << " Tier: 0";
+	}
 
 	if (it.wieldInfo != 0) {
 		s << std::endl << "It can only be wielded properly by ";
